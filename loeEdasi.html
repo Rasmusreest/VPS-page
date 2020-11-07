@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohkem infot VPS Serverite kohta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-image: url('taust.jpg');">
+    <h1 id="loe__pealkiri">Rohkem infot</h1>
+    <p id="tekst">Kas Pilveserver VPS on kiirem kui Virtuaalserver?<br>
+        Sinu veebirakenduse töökiirus sõltub paljuski kasutada oleva protsessori taktsagedusest (palju käske jõuab
+        sekundis täita) ja tuumade arvust (palju pöördumisi saab korraga teenindada). Taktsagedus on mõlemal platvormil
+        enam-vähem sama, aga Zone Virtuaalserveri komponendid on hajutatud üle suure serverite pargi, näiteks
+        teenindavad seda eraldi füüsilistes serverites asuvad veebi- ja andmebaasiserverid suure hulga tuumadega.
+        Võrreldava jõudluse ehk samaaegsete päringute arvu teenindamiseks on vaja vähemalt 4-6 tuumaga VPSi.</p>
+
+    <p id="tekst">Kui võimast VPSi sa vajad?<br>
+        Ühe tuumaga VPS I sobib katsetamiseks, arenduseks ja väga väikse külastatavusega veebidele. Üksikpäringu puhul
+        alla 0,5 sekundi võtva lehekuvamise aeg kahekordistub juba 2-3 samaaegse päringu puhul, Zone 1-minutise kasvava
+        koormuse testiga teenindas kuni 170 päringut.</p>
+
+    <p id="tekst">Kahe tuumaga VPS II puhul võib tinglikult öelda, et üks on rakendusele ja teine andmebaasile. Sobib
+        väikse
+        külastatavusega veebile, ei kannata hulgaliselt külastajaid toovaid kampaaniaid. 5-6 samaaegset lehekuvamist
+        kahekordistavad nendele kuluva aja, Zone testi käigus teenindas kuni 350 päringut.
+
+        Nelja tuumaga VPS IV sai meie testis alla 1 sekundi hakkama kuni 10 samaaegse lehekuvamisega, testi jooksul
+        teenindas kuni 580 päringut. Sobib mõõduka külastatavusega veebile, kannatab väiksemaid kampaaniaid.
+
+        Ääremärkus: Zone Virtuaalserver teenindas sama testi käigus 810 päringut, nende kestvus oluliselt ei muutunud.
+    </p>
+
+    <p id="tekst">Kui kiire on Zone Pilveserver VPS teiste teenusepakkujatega võrreldes?<br>
+        Oleme oma veebirakenduse-testi proovinud mitme tuntud teenusepakkuja VPSide peal, sh erineva tuumade arvuga.
+        Näiteks populaarse DigitalOcean’i puhul on nii üksiku lehe genereerimise aeg kui koormustaluvus kordades meie
+        kasuks, eriti mitmetuumaliste VPSide puhul. Vultr on meist mõnevõrra aeglasem, UpCloud natuke kiirem.
+
+        Testiks on meil kasutusel ca 50 näidistootega mitmekeelne veebipood: WordPress+WooCommerce+WPML ja Flatsome
+        teema. Teeme Loader.io abil 1-minutist koormustesti, mille käigus kasutajate arv kasvab 1st kuni 10 samaaegse
+        päringuni. Minimaalne päringuvastus iseloomustab hästi protsessori jõudlust, testi jooksul tehtud päringute
+        näitab koormustaluvust ja rakendab kuni 4 tuuma täielikult tööle. Testis ei kasuta me cache-pluginaid, tulemuste
+        võrreldavuse huvides toimub paigaldamine automaatselt Ansible playbook’iga.</p>
+    <a href="index.html" class="tagasi">Tagasi</a>
+</body>
+</div>
+
+</html>
